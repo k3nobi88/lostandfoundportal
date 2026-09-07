@@ -1,0 +1,163 @@
+Full feature list — test these one by one
+Here's every feature your site has, grouped by area.
+
+Auth
+
+ Sign up with any username / email / password (no validation rules)
+ Log in with correct credentials
+ Log in with wrong password shows error
+ Logout clears session and redirects
+ Accessing protected pages while logged out redirects to login
+ Profile picture upload on edit profile
+ Change username and email on edit profile
+ Change password on edit profile (leave blank = keep current)
+
+
+Listings — creating
+
+ Report Lost Item form submits and creates listing
+ Report Found Item form submits and creates listing
+ Category-specific extra fields show/hide correctly (pet, vehicle, person, item)
+ Location picker map pin drops and saves lat/lng
+ Image upload works (JPG, PNG, WEBP, GIF)
+ Reward amount field saves correctly
+ Date field rejects future dates
+
+
+Browse page
+
+ All listings load (paginated, 12 per page)
+ Type filter (All / Lost / Found) works
+ Category filter (All / Items / Pets / Vehicles / Persons) works
+ Text search filters by title and location
+ Date range filter (date from / date to) works
+ Pagination numbers work
+ First / Last page jump buttons work
+ Skeleton loading shows before cards appear
+ Map toggle shows/hides the map
+ Map pins appear for listings with lat/lng
+ Clicking a map pin shows the listing popup
+ Sponsored listings appear at the top
+
+
+Listing detail (item.php)
+
+ Listing loads correctly when logged out (guest can view)
+ Guest sees "Sign in to claim" instead of claim form
+ Logged-in non-owner sees claim form
+ Owner sees boost button instead of claim form
+ Resolved banner shows when a claim is approved/collected
+ Smart matching section shows same-category opposite-type listings
+ Location map pin shows correctly
+ Flag / report listing button works
+ Boost button redirects to boost_pay.php correctly
+
+
+Claims
+
+ Submit a claim on a listing (with optional preferred reward method)
+ Owner receives a notification when claim is submitted (bell icon)
+ Owner can view incoming claims at incoming_claims.php
+ Owner can approve a claim
+ Owner can reject a claim
+ Claimant receives notification when claim is approved or rejected
+ When approved, other pending claims on the same listing are auto-rejected
+ Claimant can view all their claims at myclaims.php
+ Approved claim shows "Open Chat" button
+ Mark as Collected button appears after approval
+ Marking as collected sets listing to resolved status
+
+
+Chat (claim_detail.php)
+
+ Chat loads with existing messages
+ Sending a message appears instantly (optimistic render)
+ Other user's messages appear within 3 seconds (polling)
+ Green live dot shows when connection is active
+ Red dot shows when offline / network error
+ Enter key sends message, Shift+Enter adds new line
+ Chat input and send button are disabled for rejected/collected claims
+ Only the owner and claimant can access the chat (others get denied)
+
+
+Rewards
+
+ Rewards page shows rewards you are offering (lost items with reward set)
+ Rewards page shows rewards you may receive (approved claims on reward listings)
+ Owner sees reward payment options when claim is approved
+ "Pay Online" goes to reward_pay.php and processes payment
+ "Paid Cash" marks reward as paid with method = cash
+ Paid reward shows green "Reward paid" confirmation
+
+
+Boost / sponsored listings
+
+ Boost page shows the two plan cards (1 Week RM5.49, 1 Month RM18.90)
+ Selecting a plan updates the payment summary
+ Paying activates the boost and redirects to boost_success.php
+ Success page shows correct plan, amount, and expiry date
+ Boosted listings show gold "Sponsored" badge on cards
+ Boosted listings appear first on browse page
+ Boosted listings appear in the homepage sponsored section and hero ticker
+
+
+Notifications
+
+ Bell icon appears in navbar when logged in
+ Bell shows a red count badge when there are unread notifications
+ Clicking the bell opens the dropdown
+ Dropdown lists unread notifications with timestamps
+ Clicking "Mark all read" clears the badge
+ Submitting a claim creates a notification for the listing owner
+ Approving/rejecting a claim creates a notification for the claimant
+
+
+Profile
+
+ Profile page shows correct stats (listings, claims, approved)
+ Active listings grid displays all user listings
+ Filter tabs (All / Lost / Found) filter the listings grid
+ Delete listing button works (POST, with confirm dialog)
+ Archived/settled listings section shows past resolved items
+ Edit Profile page loads with current user data
+ Profile picture preview works before saving
+
+
+Admin panel
+
+ Admin login works (role = 'admin')
+ Stats dashboard shows correct counts
+ Chart shows last 7 days listings activity
+ Approve / reject pending claims
+ Delete any listing
+ Delete any user (non-admin)
+ Approve / reject boost requests
+ Unflag a flagged listing
+ Force-collect a listing
+ Post an announcement (shows as ticker on homepage)
+ Toggle announcement active/inactive
+ Delete announcement
+
+
+Footer / info pages
+
+ FAQ page loads and accordion open/close works
+ About page loads
+ Contact page form submits and shows success message
+ Privacy Policy page loads
+ Terms of Service page loads
+ Footer links (Browse, Report Lost, Report Found, FAQ, About, Contact, Privacy, Terms) all work
+
+
+General / UX
+
+ Navbar shows correct links for guest / logged-in user / admin
+ Mobile hamburger menu opens and closes
+ Avatar dropdown opens and closes, closes on outside click
+ Active nav link highlighted on current page
+ Back to top button appears after scrolling 400px
+ Cookie consent popup appears on first visit
+ Cookie popup does not re-appear after accepting
+ Homepage announcement ticker scrolls if an active announcement exists
+ Homepage stats count (Items Reported, Registered Users, Items Reunited) are accurate
+ 16/9 card images consistent across browse, profile, claims, and item detail pages
